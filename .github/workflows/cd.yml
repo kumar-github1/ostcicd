@@ -17,11 +17,12 @@ jobs:
     - name: Set up SSH
       uses: webfactory/ssh-agent@v0.5.3
       with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        ssh-private-key: "b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZWQyNTUxOQAAACC7F59XTa4XLi+LZVKzkP30x2Mpg7JVCioOGTHXdvi+KwAAAJgo7YURKO2FEQAAAAtzc2gtZWQyNTUxOQAAACC7F59XTa4XLi+LZVKzkP30x2Mpg7JVCioOGTHXdvi+KwAAAECb1/5MFe4u5BXKahBwrBKb7d53KI6QAj+vzu4m2/ikirsXn1dNrhcuL4tlUrOQ/fTH
+YymDslUKKg4ZMdd2+L4rAAAAFWt1bWFyc3NzZHNrQGdtYWlsLmNvbQ=="
 
     - name: Deploy to Server
       run: |
-        ssh -o StrictHostKeyChecking=no Sowmyasree@172.25.112.1 'bash -s' << 'ENDSSH'
+        ssh -o StrictHostKeyChecking=no kumar@172.25.112.1 'bash -s' << 'ENDSSH'
         cd /path/to/your/project
         git pull origin main
         npm install --production
